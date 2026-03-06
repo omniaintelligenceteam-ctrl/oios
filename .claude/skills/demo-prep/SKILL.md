@@ -1,3 +1,9 @@
+---
+name: demo-prep
+description: Build and customize a demo script for a specific prospect or company. Use when Wes has an upcoming demo, wants to prep for a sales call, or needs to show a business what Claude and OpenClaw can do for them.
+disable-model-invocation: false
+---
+
 # Demo Prep
 
 Build and customize a demo script showing a specific business exactly what Claude + OpenClaw can do for them. Goal: make it a no-brainer close.

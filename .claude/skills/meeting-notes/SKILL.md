@@ -1,3 +1,9 @@
+---
+name: meeting-notes
+description: Convert raw notes, transcripts, or voice-to-text dumps into clean meeting summaries with action items. Use when Wes pastes messy notes or asks to clean up or summarize a meeting.
+disable-model-invocation: false
+---
+
 # Meeting Notes
 
 Turn raw, messy notes into a clean summary with clear action items.
@@ -49,3 +55,4 @@ Ask: "Want me to draft any of these action items, or send a recap to anyone?"
 - Keep the summary short. If someone wasn't in the meeting, they should understand it in 30 seconds.
 - Action items must be specific and owned. "Discuss further" is not an action item.
 - Don't editorialize — reflect what was said, not what should have been said.
+- Save the output to `meetings/` if it's a meeting worth referencing later.

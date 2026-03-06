@@ -1,3 +1,9 @@
+---
+name: data-entry
+description: Structure messy or raw data into clean, organized formats for sheets, databases, or docs. Use when Wes pastes unstructured data, a list, or a brain dump that needs to be organized.
+disable-model-invocation: false
+---
+
 # Data Entry
 
 Structure messy or raw data into clean, organized formats ready for sheets, databases, or docs.

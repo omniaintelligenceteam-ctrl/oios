@@ -1,3 +1,9 @@
+---
+name: follow-up
+description: Draft follow-up messages after demos, sales calls, or outreach. Use when Wes needs to follow up with a prospect, re-engage a cold lead, or keep a conversation moving after a meeting.
+disable-model-invocation: false
+---
+
 # Follow-Up
 
 Draft follow-up messages after demos, calls, or outreach. Keep the conversation alive without being annoying.

@@ -1,3 +1,9 @@
+---
+name: content-drafts
+description: Write LinkedIn posts and short-form content in Wes's voice. Use when Wes wants to post on LinkedIn, write social content, share a story or insight, or build his personal brand online.
+disable-model-invocation: false
+---
+
 # Content Drafts
 
 Write LinkedIn posts and short-form content in Wes's voice — casual, confident, real. No corporate garbage.

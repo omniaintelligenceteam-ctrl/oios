@@ -1,3 +1,9 @@
+---
+name: weekly-review
+description: Run a weekly business review — wins, blockers, priority reset. Use when Wes says "weekly review", wants to review his week, or needs to reset priorities.
+disable-model-invocation: false
+---
+
 # Weekly Review
 
 Run a quick weekly business review — what got done, what's stuck, and what matters most this week.
@@ -54,6 +60,8 @@ Quick weekly review — answer these however you want:
 
 ### Step 4: Offer follow-ups
 Ask: "Want me to update `context/current-priorities.md` based on this? Or log any of those decisions?"
+
+Save the output to `weekly-reviews/YYYY-MM-DD.md`.
 
 ## Notes
 - Be honest in the "Carried Over" section. Don't soften it. Wes wants truth.

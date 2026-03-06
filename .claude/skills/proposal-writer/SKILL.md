@@ -1,3 +1,9 @@
+---
+name: proposal-writer
+description: Write a service proposal for a prospect. Use when Wes needs to send a proposal, a prospect asked for pricing or a scope doc, or after a successful demo that needs a next step document.
+disable-model-invocation: false
+---
+
 # Proposal Writer
 
 Generate service proposals for prospects — clear, confident, and built around their specific situation.

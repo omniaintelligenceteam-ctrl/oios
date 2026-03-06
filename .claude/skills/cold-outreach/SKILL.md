@@ -1,3 +1,9 @@
+---
+name: cold-outreach
+description: Draft cold emails or DMs to CEOs and decision-makers in Wes's voice. Use when Wes wants to reach out to a prospect, write a cold email, or contact a target company.
+disable-model-invocation: false
+---
+
 # Cold Outreach
 
 Draft cold emails or DMs to CEOs/decision-makers in Wes's voice — casual, confident, like a friend who found something they'd be crazy to ignore.
