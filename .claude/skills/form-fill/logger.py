@@ -1,7 +1,7 @@
 # logger.py
 import csv
 import os
-from datetime import datetime
+from datetime import datetime, timezone
 
 FIELDNAMES = ['timestamp', 'company_name', 'site_url', 'contact_method', 'job_title', 'status']
 
@@ -15,7 +15,7 @@ def log_attempt(log_file: str, company_name: str, site_url: str,
         if write_header:
             writer.writeheader()
         writer.writerow({
-            'timestamp': datetime.utcnow().isoformat(),
+            'timestamp': datetime.now(timezone.utc).isoformat(),
             'company_name': company_name,
             'site_url': site_url,
             'contact_method': contact_method,
