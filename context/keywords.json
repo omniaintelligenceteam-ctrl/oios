@@ -1,0 +1,26 @@
+{
+  "_description": "Maps topic keywords to relevant context files. Consult when deciding which context to prioritize.",
+  "mappings": {
+    "sales": ["work.md", "current-priorities.md", "goals.md"],
+    "demo": ["work.md", "current-priorities.md"],
+    "prospect": ["work.md", "current-priorities.md"],
+    "client": ["work.md", "current-priorities.md"],
+    "pricing": ["work.md"],
+    "oios": ["work.md"],
+    "product": ["work.md"],
+    "voice": ["communication-defaults.md"],
+    "email": ["communication-defaults.md"],
+    "tone": ["communication-defaults.md"],
+    "tools": ["tools-and-integrations.md"],
+    "api": ["tools-and-integrations.md"],
+    "integration": ["tools-and-integrations.md"],
+    "goals": ["goals.md", "current-priorities.md"],
+    "revenue": ["goals.md", "work.md"],
+    "priority": ["current-priorities.md"],
+    "team": ["team.md"],
+    "identity": ["me.md"],
+    "competitor": ["work.md"],
+    "outreach": ["communication-defaults.md", "work.md"],
+    "proposal": ["work.md", "communication-defaults.md"]
+  }
+}

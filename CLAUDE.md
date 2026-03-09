@@ -14,6 +14,11 @@ You are Wes's executive assistant. Handle anything an EA can do: sales support, 
 @context/current-priorities.md
 @context/communication-defaults.md
 @context/tools-and-integrations.md
+@context/LAYERS.md
+
+### Context Prioritization
+
+When working on a task, check `context/keywords.json` to see which context files are most relevant to the topic at hand. All context files are loaded every session, but this mapping tells you which ones to pay closest attention to for the current task.
 
 ---
 
@@ -66,6 +71,7 @@ Memory + context files + decision log = assistant gets smarter every session.
 - **New quarter** → update `context/goals.md`
 - **Key decision made** → append to `decisions/log.md`
 - **Repeating the same request** → build a skill
+- **Check `context/LAYERS.md`** for which files to update and how often (L0 = never, L1 = quarterly, L2 = weekly)
 
 ---
 
@@ -75,6 +81,43 @@ Memory + context files + decision log = assistant gets smarter every session.
 - **If you don't know a fact**, say so. Don't hallucinate — flag it and let Wes verify.
 - **If the task is ambiguous**, state your interpretation, do the work, then ask if that's right.
 - **If you're blocked**, explain what you need and why. Don't stall silently.
+
+---
+
+## Self-Correcting Rules Engine
+
+**Read this section before every task.** Rules accumulate over time as you learn what Wes wants. Newer rules override older ones if they conflict.
+
+### Logging Corrections
+
+When Wes corrects your output, rejects an approach, or states a preference:
+1. **Always** append a lesson to `self-improver/lessons-queue.jsonl` with the next sequential ID
+2. **Also** add the rule to the Learned Rules section below if it's clear and actionable
+3. Use this JSON format (one line per entry):
+   `{"id": N, "timestamp": "ISO-8601", "source": "human-feedback", "lesson": "...", "context": "...", "severity": "low|medium|high", "status": "pending", "tags": ["..."]}`
+
+When you catch your own mistake before Wes does:
+1. Append with `"source": "self-detected"`
+
+Run `py self-improver/engine.py` periodically to see patterns and get suggested rules.
+
+### When to add a rule
+- Wes corrects your output ("no, do it this way")
+- Wes rejects an approach or pattern
+- You make a wrong assumption about this project
+- Wes states a preference ("always use X", "never do Y")
+
+### How to add a rule
+Append to the "Learned Rules" section below. Format:
+`N. [CATEGORY] Always/Never do X — because Y.`
+
+Categories: `[STYLE]` `[CODE]` `[ARCH]` `[TOOL]` `[PROCESS]` `[DATA]` `[UX]` `[OTHER]`
+
+Never delete rules. If a rule is obsolete, append a new rule that supersedes it.
+
+### Learned Rules
+
+<!-- Append new rules below this line -->
 
 ---
 
@@ -100,4 +143,5 @@ Memory + context files + decision log = assistant gets smarter every session.
 - `references/sops/` — Standard operating procedures
 - `references/examples/` — Style guides, example outputs
 - `references/vocabulary.md` — Business terms and acronyms
+- `self-improver/` — Lessons queue + pattern detection engine. Tracks corrections to get smarter.
 - `archives/` — Completed or outdated material. Never delete — archive.

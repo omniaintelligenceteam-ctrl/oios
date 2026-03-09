@@ -1,0 +1,87 @@
+{
+  "call_metadata": {
+    "call_id": "BLO-2026-03-04-1023",
+    "date": "2026-03-04",
+    "time": "10:23 AM CST",
+    "duration": "1m 47s",
+    "direction": "inbound",
+    "answered_by": "Lisa (Office Manager)"
+  },
+  "customer": {
+    "name": "Sarah Henderson",
+    "phone": "214-555-0847",
+    "address": "4521 Oak Hollow Dr, Frisco, TX",
+    "referral_source": "Neighbor — the Thompsons on Oak Hollow (past client)"
+  },
+  "job_details": {
+    "scope": [
+      "Patio lighting — new patio, recently built",
+      "Driveway path lights — long driveway, safety concern (mother tripped)",
+      "Accent uplighting — 3 large live oak trees in front yard"
+    ],
+    "estimated_fixtures": {
+      "patio": "6-10 fixtures",
+      "driveway_path": "10-14 path lights",
+      "tree_uplights": "6 fixtures (2 per tree)"
+    },
+    "budget": {
+      "range": "$5,000 - $8,000",
+      "budget_confirmed": true,
+      "within_typical_range": true
+    },
+    "timeline": {
+      "deadline": "Before June 2026",
+      "reason": "Daughter's graduation party — backyard event",
+      "urgency": "moderate-high"
+    }
+  },
+  "appointment": {
+    "type": "Free on-site consultation",
+    "date": "2026-03-06",
+    "time": "2:00 PM",
+    "duration_estimate": "45 minutes",
+    "assigned_to": null
+  },
+  "sentiment_analysis": {
+    "overall": "very positive",
+    "buying_signals": [
+      "Already has a budget range ready",
+      "Specific deadline with emotional importance (daughter's graduation)",
+      "Referred by happy neighbor — social proof already done",
+      "Said 'that sounds perfect' to consultation — no hesitation"
+    ],
+    "concerns": [
+      "Safety issue with dark driveway (mother tripped) — emotional driver"
+    ],
+    "close_probability": "85%"
+  },
+  "lead_score": 92,
+  "lead_grade": "A",
+  "recommended_actions": [
+    {
+      "action": "Send confirmation text to Sarah",
+      "priority": "immediate",
+      "status": "auto-triggered"
+    },
+    {
+      "action": "Assign consultation to top sales rep (warm lead, high value)",
+      "priority": "within 1 hour",
+      "status": "auto-triggered"
+    },
+    {
+      "action": "Notify Jake via Slack: hot lead, $5-8K, Frisco",
+      "priority": "immediate",
+      "status": "auto-triggered"
+    },
+    {
+      "action": "Send day-before reminder text on Wednesday",
+      "priority": "scheduled",
+      "status": "queued for 2026-03-05 10:00 AM"
+    },
+    {
+      "action": "If no proposal sent within 48 hours of consultation, trigger follow-up",
+      "priority": "conditional",
+      "status": "watchdog set"
+    }
+  ]
+}

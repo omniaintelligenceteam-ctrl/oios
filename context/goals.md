@@ -1,3 +1,9 @@
+---
+layer: L1-Strategy
+cadence: quarterly
+description: Quarterly objectives and key results
+---
+
 # Goals
 
 > Update this file at the start of each quarter.

@@ -1,3 +1,9 @@
+---
+layer: L2-Operations
+cadence: as-needed
+description: Active tools, APIs, credentials locations
+---
+
 # Tools & Integrations
 
 ## Active Tools

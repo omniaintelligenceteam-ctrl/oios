@@ -1,0 +1,20 @@
+{
+  "_description": "Maps topic keywords to relevant context files. Customize per client.",
+  "mappings": {
+    "sales": ["L1-business.md", "L2-priorities.md", "L1-goals.md"],
+    "customer": ["L1-business.md", "L2-priorities.md"],
+    "pricing": ["L1-business.md"],
+    "competitor": ["L1-business.md"],
+    "scheduling": ["L2-tools.md", "L2-priorities.md"],
+    "invoice": ["L2-tools.md", "L1-business.md"],
+    "phone": ["L2-tools.md", "L0-communication.md"],
+    "email": ["L0-communication.md"],
+    "tone": ["L0-communication.md"],
+    "goals": ["L1-goals.md", "L2-priorities.md"],
+    "team": ["L2-team.md"],
+    "tools": ["L2-tools.md"],
+    "integration": ["L2-tools.md"],
+    "identity": ["L0-identity.md"],
+    "priority": ["L2-priorities.md"]
+  }
+}

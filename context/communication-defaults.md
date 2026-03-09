@@ -1,3 +1,9 @@
+---
+layer: L0-Foundation
+cadence: never
+description: Voice, tone, email signature, response timeframes
+---
+
 # Communication Defaults
 
 ## Email Signature

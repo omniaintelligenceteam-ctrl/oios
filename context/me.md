@@ -1,3 +1,9 @@
+---
+layer: L0-Foundation
+cadence: never
+description: Identity, mission, who Wes is
+---
+
 # Me
 
 - **Name:** Wes
