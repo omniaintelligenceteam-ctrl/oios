@@ -241,6 +241,20 @@ p{font-size:clamp(15px,1.2vw,18px);line-height:1.7;color:var(--muted);max-width:
 /* ===== COUNTER ANIMATION ===== */
 .count-up{font-variant-numeric:tabular-nums}
 
+/* ===== HERO CAPABILITIES GRID ===== */
+.hero-caps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:36px;width:100%}
+@media(max-width:900px){.hero-caps{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.hero-caps{grid-template-columns:1fr}}
+.hero-cap{padding:20px;text-align:left}
+.hero-cap .cap-label{font-family:var(--font-display);font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.hero-cap .cap-label .cap-dot{width:8px;height:8px;border-radius:50%;display:inline-block}
+.hero-cap ul{list-style:none;padding:0;margin:0}
+.hero-cap ul li{font-size:13px;line-height:1.7;color:var(--muted);padding-left:0;margin-bottom:2px}
+.hero-stat-bar{display:flex;gap:40px;margin-top:32px;flex-wrap:wrap;padding:20px 28px;width:100%}
+.hero-stat-bar .hs{text-align:center}
+.hero-stat-bar .hs .hs-num{font-family:var(--font-display);font-size:clamp(28px,3vw,40px);font-weight:800;line-height:1}
+.hero-stat-bar .hs .hs-desc{font-size:12px;color:var(--muted);margin-top:4px}
+
 /* ===== GENERATED IMAGES ===== */
 .slide-img{width:100%;border-radius:14px;object-fit:cover;display:block;border:1px solid var(--glass-border)}
 .hero-layout{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;width:100%}
@@ -265,36 +279,71 @@ p{font-size:clamp(15px,1.2vw,18px);line-height:1.7;color:var(--muted);max-width:
 <!-- ===== DECK ===== -->
 <div class="deck">
 
-<!-- SLIDE 1: HERO / PROBLEM -->
-<section class="slide" id="slide-1" data-name="The Problem">
+<!-- SLIDE 1: HERO -->
+<section class="slide" id="slide-1" data-name="OIOS">
   <div class="hero-layout">
     <div>
       <div class="label reveal" style="margin-bottom:16px">Omnia Intelligence AI</div>
       <h1 class="hero-title reveal" style="transition-delay:.1s">
-        Your Business Is<br><span class="highlight">Leaking Money.</span>
+        We Install AI Into Your Business.<br><span class="highlight">It Handles the Rest.</span>
       </h1>
-      <p class="reveal" style="margin-top:20px;transition-delay:.2s;max-width:520px">
-        Every missed call, forgotten follow-up, and buried proposal is revenue walking out the door. You built the business — but the admin is eating it alive.
+      <p class="reveal" style="margin-top:20px;transition-delay:.2s;max-width:560px">
+        One system. Installed directly into your operation. It monitors your business, builds your documents, automates your workflows, and runs your back office — 24/7. You just text it from your phone.
       </p>
-      <div class="stats stagger" style="margin-top:40px">
-        <div class="stat reveal">
-          <div class="num accent count-up" data-target="40" data-suffix="%">0%</div>
-          <div class="desc">of calls go to voicemail and never call back</div>
-        </div>
-        <div class="stat reveal">
-          <div class="num gold count-up" data-target="20" data-suffix=" hrs">0 hrs</div>
-          <div class="desc">per week buried in admin</div>
-        </div>
-        <div class="stat reveal">
-          <div class="num green count-up" data-target="50" data-prefix="$" data-suffix="K+">$0K+</div>
-          <div class="desc">annual revenue lost from dropped leads</div>
-        </div>
-      </div>
     </div>
     <div class="pillar-img-wrap reveal-right" style="transition-delay:.3s">
-      <img src="images/hero-problem.png" alt="Business leaking revenue">
+      <img src="images/hero-problem.png" alt="AI-powered business operations">
     </div>
   </div>
+
+  <!-- 4 Capability Columns -->
+  <div class="hero-caps stagger" style="margin-top:8px">
+    <div class="glass hero-cap reveal">
+      <div class="cap-label"><span class="cap-dot" style="background:var(--blue)"></span><span style="color:var(--text)">Monitor</span></div>
+      <ul>
+        <li>Every call tracked &amp; scored</li>
+        <li>Daily briefings at 6:30 AM</li>
+        <li>Stale deal alerts</li>
+        <li>Weekly performance reports</li>
+      </ul>
+    </div>
+    <div class="glass hero-cap reveal">
+      <div class="cap-label"><span class="cap-dot" style="background:var(--gold)"></span><span style="color:var(--text)">Build</span></div>
+      <ul>
+        <li>Proposals in 30 seconds</li>
+        <li>Contracts &amp; invoices on demand</li>
+        <li>Content in your voice</li>
+        <li>Onboarding sequences</li>
+      </ul>
+    </div>
+    <div class="glass hero-cap reveal">
+      <div class="cap-label"><span class="cap-dot" style="background:var(--green)"></span><span style="color:var(--text)">Automate</span></div>
+      <ul>
+        <li>Follow-ups that never stop</li>
+        <li>Email triage &amp; response</li>
+        <li>CRM updates — zero typing</li>
+        <li>50+ integrations</li>
+      </ul>
+    </div>
+    <div class="glass hero-cap reveal">
+      <div class="cap-label"><span class="cap-dot" style="background:var(--red)"></span><span style="color:var(--text)">Run</span></div>
+      <ul>
+        <li>24/7 AI receptionist</li>
+        <li>Job scheduling &amp; crew mgmt</li>
+        <li>Ask anything, get real answers</li>
+        <li>Gets smarter every day</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Stat Bar -->
+  <div class="glass hero-stat-bar stagger reveal" style="margin-top:16px">
+    <div class="hs"><div class="hs-num accent count-up" data-target="98" data-suffix="%">0%</div><div class="hs-desc">call answer rate</div></div>
+    <div class="hs"><div class="hs-num gold">24/7</div><div class="hs-desc">always on</div></div>
+    <div class="hs"><div class="hs-num green count-up" data-target="30" data-suffix=" sec">0 sec</div><div class="hs-desc">proposal generation</div></div>
+    <div class="hs"><div class="hs-num" style="color:var(--text)">0</div><div class="hs-desc">missed follow-ups</div></div>
+  </div>
+
   <div class="slide-footer">Press <kbd style="padding:2px 8px;border:1px solid var(--dim);border-radius:4px;font-size:11px">&rarr;</kbd> or scroll to continue</div>
 </section>
 

@@ -19,6 +19,7 @@ def load_learnings() -> dict:
         "blocked_domains": [],
         "no_form_domains": [],
         "successful_domains": [],
+        "contacted_domains": [],
         "failure_reasons": {},
         "total_runs": 0,
         "total_submitted": 0,
@@ -49,8 +50,15 @@ def update_learnings(log_file: str):
 
         if status == 'submitted':
             learnings['total_submitted'] += 1
-            if domain and domain not in learnings['successful_domains']:
-                learnings['successful_domains'].append(domain)
+            if domain:
+                if domain not in learnings['successful_domains']:
+                    learnings['successful_domains'].append(domain)
+                if domain not in learnings.setdefault('contacted_domains', []):
+                    learnings['contacted_domains'].append(domain)
+        elif status == 'submitted-unconfirmed':
+            learnings['total_submitted'] += 1
+            if domain and domain not in learnings.setdefault('contacted_domains', []):
+                learnings['contacted_domains'].append(domain)
         elif 'failed' in status:
             learnings['total_failed'] += 1
             reason = status.replace('failed: ', '')
@@ -71,5 +79,7 @@ def _print_summary(learnings: dict):
     print(f"\n[learner] Lifetime stats: {learnings['total_submitted']} submitted / {total} attempted ({rate}% success rate)")
     if learnings['failure_reasons']:
         top = sorted(learnings['failure_reasons'].items(), key=lambda x: -x[1])[:3]
-        print(f"[learner] Top failure reasons: {', '.join(f'{r} ({n}x)' for r, n in top)}")
+        # Strip non-ASCII to avoid charmap errors on Windows terminals
+        reasons_str = ', '.join(f"{r.encode('ascii', 'replace').decode()} ({n}x)" for r, n in top)
+        print(f"[learner] Top failure reasons: {reasons_str}")
     print(f"[learner] Learnings saved to learnings.json\n")

@@ -25,14 +25,19 @@ These companies are signaling the exact pain OIOS solves.
 
 ```bash
 cd "c:\Users\default.DESKTOP-ON29PVN\OneDrive\Pictures\New folder\Wes EA\.claude\skills\form-fill"
-TWO_CAPTCHA_API_KEY=<from CLAUDE.local.md> python runner.py "<query>" --limit <n> --parallel <n>
+python runner.py "<query>"
 ```
 
-**Examples:**
+**Always dry-run first to preview what will be sent:**
 ```bash
-python runner.py "receptionist hiring" --limit 20 --parallel 5
-python runner.py "office manager job" --limit 10 --parallel 3
-python runner.py "admin assistant opening" --limit 50 --parallel 5
+python runner.py "receptionist hiring" --limit 10 --dry-run
+```
+
+**Then run live when you're happy with it:**
+```bash
+python runner.py "receptionist hiring" --limit 10
+python runner.py "plumbing office manager" --limit 20
+python runner.py "HVAC admin assistant" --limit 20 --parallel 2
 ```
 
 ## Parameters
@@ -41,7 +46,11 @@ python runner.py "admin assistant opening" --limit 50 --parallel 5
 |-------|---------|-------------|
 | query | required | Job title to search for |
 | --limit | 20 | Max companies to process |
-| --parallel | 5 | Simultaneous browser agents |
+| --parallel | 1 | Simultaneous browser agents (keep at 1 for accuracy) |
+| --dry-run | off | Find forms but do NOT submit — preview only |
+| --headless | off | Run browser invisibly |
+
+**Deduplication is automatic** — already-contacted companies are skipped every run.
 
 ## Output
 

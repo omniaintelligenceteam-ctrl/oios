@@ -5,3 +5,6 @@ node_modules/
 .worktrees/
 projects/form-fill/log.csv
 projects/form-fill/learnings.json
+__pycache__/
+*.pyc
+.claude/plans/
