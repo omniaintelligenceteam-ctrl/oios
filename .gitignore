@@ -8,3 +8,6 @@ projects/form-fill/learnings.json
 __pycache__/
 *.pyc
 .claude/plans/
+.next/
+out/
+*.tsbuildinfo

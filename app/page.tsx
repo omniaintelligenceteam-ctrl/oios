@@ -1,38 +1,34 @@
-import Image from 'next/image'
-import { Sparkles } from 'lucide-react'
-
-import { SplineSceneBasic } from '@/components/ui/demo'
+import { CTA } from '@/components/sections/CTA'
+import { CommandCenter } from '@/components/sections/CommandCenter'
+import { FAQ } from '@/components/sections/FAQ'
+import { Footer } from '@/components/sections/Footer'
+import { Hero } from '@/components/sections/Hero'
+import { Navbar } from '@/components/sections/Navbar'
+import { PainPoints } from '@/components/sections/PainPoints'
+import { Pricing } from '@/components/sections/Pricing'
+import { ROICalculator } from '@/components/sections/ROICalculator'
+import { Testimonials } from '@/components/sections/Testimonials'
+import { ThreePillars } from '@/components/sections/ThreePillars'
+import { FlowFieldBackground } from '@/components/ui/flow-field-background'
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-zinc-950 text-zinc-100">
-      <section className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 px-6 py-20 lg:grid-cols-2 lg:items-center">
-        <div>
-          <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-zinc-700 px-3 py-1 text-xs uppercase tracking-[0.2em] text-zinc-300">
-            <Sparkles className="h-3.5 w-3.5" />
-            OIOS Hero
-          </p>
-          <h1 className="text-balance text-4xl font-semibold leading-tight md:text-6xl">
-            AI Systems for Service Businesses
-          </h1>
-          <p className="mt-5 max-w-xl text-zinc-400">
-            Replace admin chaos with one command center for calls, scheduling,
-            follow-ups, and revenue growth.
-          </p>
-          <div className="mt-8">
-            <Image
-              src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1400&q=80"
-              alt="Team collaborating with modern software systems"
-              width={1400}
-              height={900}
-              className="h-44 w-full rounded-xl object-cover"
-            />
-          </div>
-        </div>
-
-        <SplineSceneBasic />
-      </section>
+    <main className="relative min-h-screen">
+      <FlowFieldBackground className="pointer-events-none fixed inset-0 z-0 opacity-65" />
+      <div className="noise-overlay" />
+      <div className="relative z-10">
+        <Navbar />
+        <Hero />
+        <PainPoints />
+        <ThreePillars />
+        <CommandCenter />
+        <ROICalculator />
+        <Testimonials />
+        <Pricing />
+        <FAQ />
+        <CTA />
+        <Footer />
+      </div>
     </main>
   )
 }
-
