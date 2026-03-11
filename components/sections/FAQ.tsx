@@ -1,3 +1,6 @@
+'use client'
+
+import { ScrollReveal } from '@/components/ui/scroll-reveal'
 import { InteractiveAccordion } from '@/components/ui/interactive-accordion'
 
 const items = [
@@ -26,10 +29,13 @@ const items = [
 export function FAQ() {
   return (
     <section id="faq" className="section-shell relative z-10 py-16">
-      <p className="mb-3 text-xs uppercase tracking-[0.2em] text-cyan-300">FAQ</p>
-      <h2 className="mb-7 text-3xl font-bold text-white sm:text-4xl">Questions, Answered</h2>
-      <InteractiveAccordion items={items} />
+      <ScrollReveal>
+        <p className="mb-3 text-xs uppercase tracking-[0.2em] text-cyan-300">FAQ</p>
+        <h2 className="mb-7 text-3xl font-bold text-white sm:text-4xl">Questions, Answered</h2>
+      </ScrollReveal>
+      <ScrollReveal delay={0.15}>
+        <InteractiveAccordion items={items} />
+      </ScrollReveal>
     </section>
   )
 }
-

@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { Menu, X } from 'lucide-react'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const navItems = [
   { label: 'Pillars', href: '#pillars' },
@@ -13,10 +13,25 @@ const navItems = [
 
 export function Navbar() {
   const [open, setOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const onScroll = () => {
+      setScrolled(window.scrollY > 40)
+    }
+
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-black/25 backdrop-blur-xl">
-      <div className="section-shell flex h-16 items-center justify-between">
+    <header
+      className={`sticky top-0 z-50 border-b border-white/10 backdrop-blur-xl transition-all duration-300 ${scrolled ? 'bg-black/60' : 'bg-black/25'}`}
+    >
+      <div
+        className={`section-shell flex items-center justify-between transition-all duration-300 ${scrolled ? 'h-12' : 'h-16'}`}
+      >
         <Link href="#" className="text-lg font-extrabold tracking-wide text-white">
           OIOS
         </Link>
@@ -68,4 +83,3 @@ export function Navbar() {
     </header>
   )
 }
-

@@ -1,6 +1,9 @@
 'use client'
 
-import { useMemo, useState } from 'react'
+import { useMemo, useState, type ReactNode } from 'react'
+
+import { AnimatedCounter } from '@/components/ui/animated-counter'
+import { ScrollReveal } from '@/components/ui/scroll-reveal'
 
 export function ROICalculator() {
   const [callsPerMonth, setCallsPerMonth] = useState(280)
@@ -23,51 +26,62 @@ export function ROICalculator() {
 
   return (
     <section className="section-shell relative z-10 py-16">
-      <div className="glass rounded-2xl p-6 sm:p-8">
-        <p className="mb-3 text-xs uppercase tracking-[0.2em] text-amber-300">ROI Snapshot</p>
-        <h2 className="text-3xl font-bold text-white sm:text-4xl">
-          Estimate What OIOS Recovers in Your Business
-        </h2>
-        <div className="mt-8 grid gap-7 lg:grid-cols-[1.2fr_1fr]">
-          <div className="space-y-5">
-            <Slider
-              label="Inbound Calls / Month"
-              value={callsPerMonth}
-              min={80}
-              max={600}
-              onChange={setCallsPerMonth}
-            />
-            <Slider
-              label="Current Missed Call Rate (%)"
-              value={missRate}
-              min={5}
-              max={45}
-              onChange={setMissRate}
-            />
-            <Slider
-              label="Close Rate on Recovered Leads (%)"
-              value={closeRate}
-              min={10}
-              max={60}
-              onChange={setCloseRate}
-            />
-            <Slider
-              label="Average Job Value ($)"
-              value={jobValue}
-              min={500}
-              max={5000}
-              onChange={setJobValue}
-              step={50}
-            />
-          </div>
+      <ScrollReveal>
+        <div className="glass rounded-2xl p-6 sm:p-8">
+          <p className="mb-3 text-xs uppercase tracking-[0.2em] text-amber-300">ROI Snapshot</p>
+          <h2 className="text-3xl font-bold text-white sm:text-4xl">
+            Estimate What OIOS Recovers in Your Business
+          </h2>
+          <div className="mt-8 grid gap-7 lg:grid-cols-[1.2fr_1fr]">
+            <div className="space-y-5">
+              <Slider
+                label="Inbound Calls / Month"
+                value={callsPerMonth}
+                min={80}
+                max={600}
+                onChange={setCallsPerMonth}
+              />
+              <Slider
+                label="Current Missed Call Rate (%)"
+                value={missRate}
+                min={5}
+                max={45}
+                onChange={setMissRate}
+              />
+              <Slider
+                label="Close Rate on Recovered Leads (%)"
+                value={closeRate}
+                min={10}
+                max={60}
+                onChange={setCloseRate}
+              />
+              <Slider
+                label="Average Job Value ($)"
+                value={jobValue}
+                min={500}
+                max={5000}
+                onChange={setJobValue}
+                step={50}
+              />
+            </div>
 
-          <div className="space-y-3 rounded-xl border border-white/10 bg-white/[0.02] p-5">
-            <Metric label="Monthly Revenue Recovered" value={`$${Math.round(result.monthlyRecovered).toLocaleString()}`} />
-            <Metric label="Annual Revenue Recovered" value={`$${Math.round(result.annualRecovered).toLocaleString()}`} />
-            <Metric label="Estimated ROI vs $2,000/mo" value={`${Math.round(result.roiPercent)}%`} />
+            <div className="space-y-3 rounded-xl border border-white/10 bg-white/[0.02] p-5">
+              <Metric
+                label="Monthly Revenue Recovered"
+                value={<AnimatedCounter value={Math.round(result.monthlyRecovered)} prefix="$" />}
+              />
+              <Metric
+                label="Annual Revenue Recovered"
+                value={<AnimatedCounter value={Math.round(result.annualRecovered)} prefix="$" />}
+              />
+              <Metric
+                label="Estimated ROI vs $2,000/mo"
+                value={<AnimatedCounter value={Math.round(result.roiPercent)} suffix="%" />}
+              />
+            </div>
           </div>
         </div>
-      </div>
+      </ScrollReveal>
     </section>
   )
 }
@@ -106,7 +120,7 @@ function Slider({
   )
 }
 
-function Metric({ label, value }: { label: string; value: string }) {
+function Metric({ label, value }: { label: string; value: ReactNode }) {
   return (
     <div className="rounded-lg border border-white/10 bg-black/25 p-4">
       <p className="text-xs uppercase tracking-[0.14em] text-slate-400">{label}</p>
@@ -114,4 +128,3 @@ function Metric({ label, value }: { label: string; value: string }) {
     </div>
   )
 }
-

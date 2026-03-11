@@ -1,5 +1,8 @@
+'use client'
+
 import { LayoutDashboard, PhoneCall, Workflow } from 'lucide-react'
 
+import { ScrollReveal } from '@/components/ui/scroll-reveal'
 import { SpotlightCard } from '@/components/ui/spotlight-card'
 
 const pillars = [
@@ -26,31 +29,36 @@ const pillars = [
 export function ThreePillars() {
   return (
     <section id="pillars" className="section-shell relative z-10 py-16">
-      <p className="mb-3 text-xs uppercase tracking-[0.2em] text-teal-300">Three Pillars</p>
-      <h2 className="max-w-3xl text-3xl font-bold text-white sm:text-4xl">
-        Built to Monitor, Build, Automate, and Run Your Operation
-      </h2>
+      <ScrollReveal>
+        <p className="mb-3 text-xs uppercase tracking-[0.2em] text-teal-300">Three Pillars</p>
+      </ScrollReveal>
+      <ScrollReveal>
+        <h2 className="max-w-3xl text-3xl font-bold text-white sm:text-4xl">
+          Built to Monitor, Build, Automate, and Run Your Operation
+        </h2>
+      </ScrollReveal>
       <div className="mt-8 grid gap-4 md:grid-cols-3">
-        {pillars.map((pillar) => {
+        {pillars.map((pillar, index) => {
           const Icon = pillar.icon
           return (
-            <SpotlightCard key={pillar.title} glowColor={pillar.glow}>
-              <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg border border-white/15 bg-white/5">
-                <Icon className="h-5 w-5 text-white" />
-              </div>
-              <h3 className="text-xl font-semibold text-white">{pillar.title}</h3>
-              <ul className="mt-4 space-y-2">
-                {pillar.points.map((point) => (
-                  <li key={point} className="text-sm text-slate-300">
-                    {point}
-                  </li>
-                ))}
-              </ul>
-            </SpotlightCard>
+            <ScrollReveal key={pillar.title} delay={index * 0.12}>
+              <SpotlightCard glowColor={pillar.glow}>
+                <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg border border-white/15 bg-white/5">
+                  <Icon className="h-5 w-5 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-white">{pillar.title}</h3>
+                <ul className="mt-4 space-y-2">
+                  {pillar.points.map((point) => (
+                    <li key={point} className="text-sm text-slate-300">
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+              </SpotlightCard>
+            </ScrollReveal>
           )
         })}
       </div>
     </section>
   )
 }
-

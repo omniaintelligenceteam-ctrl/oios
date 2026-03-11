@@ -2,6 +2,8 @@
 
 import { ArrowRight } from 'lucide-react'
 
+import { AnimatedCounter } from '@/components/ui/animated-counter'
+import { ScrollReveal } from '@/components/ui/scroll-reveal'
 import { ShimmerText } from '@/components/ui/shimmer-text'
 import { SplineScene } from '@/components/ui/splite'
 import { TextReveal } from '@/components/ui/text-reveal'
@@ -39,9 +41,41 @@ export function Hero() {
             See Command Center
           </a>
         </div>
+        <div className="mt-8 flex flex-wrap gap-6">
+          <ScrollReveal delay={0}>
+            <div>
+              <p className="text-2xl font-bold text-white">
+                <AnimatedCounter value={98} suffix="%" />
+              </p>
+              <p className="mt-1 text-xs uppercase tracking-[0.12em] text-slate-400">
+                Calls Answered
+              </p>
+            </div>
+          </ScrollReveal>
+          <ScrollReveal delay={0.1}>
+            <div>
+              <p className="text-2xl font-bold text-white">
+                <AnimatedCounter value={15} suffix="+" />
+              </p>
+              <p className="mt-1 text-xs uppercase tracking-[0.12em] text-slate-400">
+                Hours Saved / Week
+              </p>
+            </div>
+          </ScrollReveal>
+          <ScrollReveal delay={0.2}>
+            <div>
+              <p className="text-2xl font-bold text-white">
+                <AnimatedCounter value={3} suffix="x" />
+              </p>
+              <p className="mt-1 text-xs uppercase tracking-[0.12em] text-slate-400">
+                Average ROI
+              </p>
+            </div>
+          </ScrollReveal>
+        </div>
       </div>
 
-      <div className="glass relative h-[360px] overflow-hidden rounded-2xl sm:h-[460px]">
+      <div className="glass relative h-[360px] overflow-hidden rounded-2xl sm:h-[460px] animate-float">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_25%_25%,rgba(13,148,136,0.2),transparent_45%),radial-gradient(circle_at_80%_70%,rgba(245,158,11,0.14),transparent_45%)]" />
         <SplineScene
           scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
@@ -51,4 +85,3 @@ export function Hero() {
     </section>
   )
 }
-

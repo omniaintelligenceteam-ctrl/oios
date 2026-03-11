@@ -31,7 +31,7 @@ const config: Config = {
       },
       animation: {
         spotlight: 'spotlight 2s ease .75s 1 forwards',
-        'float': 'float 6s ease-in-out infinite',
+        'float': 'float 3s ease-in-out infinite',
         'pulse-slow': 'pulse 3s ease-in-out infinite',
       },
       keyframes: {
@@ -40,8 +40,8 @@ const config: Config = {
           '100%': { opacity: '1', transform: 'translate(-50%,-40%) scale(1)' },
         },
         float: {
-          '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-10px)' },
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-8px)' },
         },
       },
     },
